@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Nova+Mono);
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+
+body, html {
+  cursor: none;
+  font-family:'Gill Sans', 'Gill Sans MT', Lato, Calibri, sans-serif;
+  height:100%;
+  margin:0;
+  overflow:hidden;
+  text-align:center;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+* {
+}
+
+.tom {
+  background-image: url(https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAfzAAAAJDRjMDk2MjQ4LWFjMzgtNDc2Ni05MWQ4LWFkNjlmZjhhMmIyZA.jpg);
+  background-repeat: repeat;
+}
+
+body.clock {
+  background-color:#9325b2;
+  color:#FFF;
+  font-size:500%;
+  font-family: Nunito, Arial !important;
+}
+
+body.news {
+  background-color:#BB1919;
+  color:#F2EFEC;
+  font-size:200%;
+  padding:0 3em;
+}
+
+body.news .clock,body.clock .news {
+  display:none;
+}
+
+div {
+  align-items:center;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  justify-content:center;
+}
+#js-unix { display: none; }
+#js-clock { font-family: 'Nova Mono', Arial, sans-serif; }
+ul { list-style-type: none; }
+#js-headline {
+  font-size: 200%;
+}
+.not-core {
+  font-style: italic;
+}
+.clock .loading {
+  color: #8600af;
+}
+
+li:nth-child(1) { font-size: 100% }
+li { font-size: 50% }
+
