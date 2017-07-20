@@ -29,7 +29,7 @@ const poll = function () {
       document.getElementById('js-headline').innerHTML = data.asset.headline
       document.title = 'BBC News'
     } else {
-      document.getElementById('js-body').className = 'clock'
+      document.getElementById('js-body').className = 'normal'
       document.title = 'Clock'
     }
     setTimeout(poll, data.pollPeriod ? data.pollPeriod : 30000)
@@ -45,10 +45,10 @@ const poll = function () {
     ul.innerHTML = ''
     for (var i = 0; i < weather.forecast.length; i++) {
       var li = document.createElement('li')
-      li.innerHTML = li.textContent = weather.forecast[i].replace(/.$/,'')
+      li.innerHTML = li.textContent = weather.forecast[i].replace(/\.$/,'')
       ul.appendChild(li)
     }
-    ul.className = '';
+    ul.className = 'weather';
     console.log(ul)
   })
 	get('./refresh.txt', function (newVersion) {
@@ -61,13 +61,23 @@ const poll = function () {
 
 const clockTick = function () {
   var now = new Date();
-  document.getElementById('js-clock').innerHTML = now.toLocaleTimeString()
-  document.getElementById('js-unix').innerHTML = (now / 1000).toFixed(3)
+	var str = now.toLocaleTimeString().split(':')
+	var ul = document.getElementById('js-clock')
+	ul.innerHTML = ''
+	for (var i = 0; i < str.length; i++) {
+		var li = document.createElement('li')
+		li.textContent = str[i]
+		ul.appendChild(li)
+	}
+	console.log(ul)
+
+  //document.getElementById('js-clock').textContent = now.toLocaleTimeString()
+  document.getElementById('js-unix').textContent = (now / 1000).toFixed(3)
 
   if (now.getHours() < 10 || now.getHours() > 14) {
-    document.getElementById('js-clock').className = ' not-core'
+    document.getElementById('js-clock').className = 'clock not-core'
   } else {
-    document.getElementById('js-clock').className = ''
+    document.getElementById('js-clock').className = 'clock'
   }
 
   setTimeout(clockTick, 1)

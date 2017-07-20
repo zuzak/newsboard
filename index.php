@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-        <meta charset="utf-8" />
+		<meta charset="utf-8" />
 		<title>BBC News</title>
 		<link rel="stylesheet" href="styles.css" type="text/css">
 <script>
@@ -18,15 +18,15 @@
       <?php echo require('scripts.php') ?>
     </script>
 	</head>
-	<body id="js-body">
+	<body class="tom" id="js-body">
     <div class="news">
       <h1>Breaking News</h1>
       <p id="js-headline"></p>
     </div>
-		<div class="clock">
-			<h1 class="loading" id="js-clock">88:88:88</h1>
+		<div class="normal">
+			<ul class="clock" id="js-clock"></ul>
 			<span id="js-unix"></span>
-			<ul id="js-weather"></ul>
+			<ul class="weather" id="js-weather"></ul>
 		</div>
 	</body>
 </html>

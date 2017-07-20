@@ -40,8 +40,10 @@ header( 'Content-Type: application/json' );
 $data = json_decode( get( $ENDPOINT ) );
 $result = array(
 	'forecast' => array(
+		$data->{'currently'}->{'summary'},
 		$data->{'minutely'}->{'summary'},
 		$data->{'hourly'}->{'summary'},
+		$data->{'daily'}->{'summary'},
 	),
 	'current' => array(
 		'summary' => $data->{'currently'}->{'summary'},
